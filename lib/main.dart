@@ -9,7 +9,26 @@ class MyFirstApp extends StatelessWidget {
       appBar: AppBar(
         title: Text('Budget Planner'),
       ),
-      body: Text('Hello Reshma'),
+      body: Column(children: getListData(),),
     ));
   }
+
+  getData() {
+    return 'Hello Reshma putta';
+  }
+
+  getListData() {
+
+    var securityQuestions = [
+      'What\'s your Mothers Maiden name?',
+      'What\'s your favourite color?'
+    ];
+
+    return <Widget>[
+      Text(securityQuestions[0]),
+      Text(securityQuestions[1]),
+      Text(getData())
+    ];
+  }
+
 }

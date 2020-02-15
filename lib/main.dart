@@ -36,10 +36,10 @@ class MyFirstApp extends StatelessWidget {
               Row(
                 children: <Widget>[
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: buttonPressed,
                     child: Text('YES'),),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: buttonPressed,
                     child: Text('NO'),)
                 ],
               )
@@ -53,8 +53,9 @@ class MyFirstApp extends StatelessWidget {
 
   }
 
-  buttonPressed(String s, bool answer) {
-    print(s + (answer? ': YES' : ': NO'));
+  buttonPressed() {
+    print('Button pressed!');
+    // print(s + (answer? ': YES' : ': NO'));
   }
 
 }

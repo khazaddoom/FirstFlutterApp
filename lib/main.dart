@@ -9,32 +9,52 @@ class MyFirstApp extends StatelessWidget {
       appBar: AppBar(
         title: Text('Budget Planner'),
       ),
-      body: Column(children: getListData(),),
+      body: Column(children: getListData(), ),
     ));
   }
 
   getData() {
-    return 'Hello Reshma putta';
+    return 'Hello Reshma';
   }
 
   getListData() {
 
     var securityQuestions = [
-      'What\'s your Mothers Maiden name?',
-      'What\'s your favourite color?'
+      'Are you Happy?',
+      'Did you have your lunch today?'
     ];
 
-    return <Widget>[
-      Text(securityQuestions[0]),
-      Text(securityQuestions[1]),
-      Text(getData()),
-      RaisedButton(
-        child: Text('Push me'),
-        onPressed: () => print('Someone pressed me...'),
-        color: Colors.blueAccent[400],
-        textColor: Colors.white,
-      )
-    ];
+    List<Widget> holder =[];
+
+    for (var item in securityQuestions) {
+      holder.add(Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Text(item),
+              Row(
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: () {},
+                    child: Text('YES'),),
+                  RaisedButton(
+                    onPressed: () {},
+                    child: Text('NO'),)
+                ],
+              )
+            ],
+          )
+        ],
+      ));
+    }
+
+    return holder;
+
+  }
+
+  buttonPressed(String s, bool answer) {
+    print(s + (answer? ': YES' : ': NO'));
   }
 
 }
